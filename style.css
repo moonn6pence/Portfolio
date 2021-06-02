@@ -93,7 +93,6 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  /* background-color: var(--color-light-blue); */
   background-color: var(--color-skyblue);
   align-items: center;
   color: var(--color-white);
@@ -139,28 +138,6 @@ p {
   color: var(--color-white);
 }
 
-@media screen and (max-width: 768px) {
-  #navbar {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .navbar__menu {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-
-  .navbar__toggleBtn {
-    display: block;
-  }
-
-  .navbar__menu.active {
-    display: flex;
-  }
-}
-
 /* Common Section */
 .section {
   padding: calc(var(--size-base) * 6.25);
@@ -203,10 +180,6 @@ p {
 
 /* Profile */
 
-#profile {
-  /* text-align: center; */
-}
-
 .profile__career {
   background-color: var(--color-light-white);
   border-radius: calc(var(--size-base) * 2);
@@ -218,9 +191,22 @@ p {
 .profile__career__item {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   padding: calc(var(--size-base) * 4);
+  width: 100%;
+}
+
+.profile__career__item:nth-child(2n-1) {
+  align-items: start;
+  text-align: start;
+  padding-right: 40%;
+  padding-left: calc(var(--size-base) * 2);
+}
+.profile__career__item:nth-child(2n) {
+  align-items: end;
+  text-align: end;
+  padding-right: calc(var(--size-base) * 2);
+  padding-left: 40%;
 }
 
 .profile__career__item:not(:first-of-type) {
@@ -232,22 +218,6 @@ p {
     var(--color-light-white)
   );
   border-image-slice: 1;
-}
-
-@media screen and (min-width: 768px) {
-  .profile__career__item {
-    align-items: start;
-    text-align: start;
-    padding-right: 40%;
-    width: 100%;
-    margin: 0;
-  }
-  .profile__career__item:nth-child(2n) {
-    align-items: end;
-    text-align: end;
-    padding-right: 0;
-    padding-left: 40%;
-  }
 }
 
 /* Skills */
@@ -303,19 +273,6 @@ p {
   height: 100%;
   max-height: 100px;
   margin-left: calc(var(--size-base) * 2);
-}
-
-@media screen and (max-width: 768px) {
-  .skills__stack {
-    display: none;
-    height: 1300px;
-  }
-  .stack__desc {
-    display: none;
-  }
-  .skills__levels {
-    display: none;
-  }
 }
 
 /* Works */
@@ -454,4 +411,51 @@ p {
 
 .contact__copyright {
   font-size: var(--font-small);
+}
+
+/* Media query */
+
+@media screen and (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar__toggleBtn {
+    display: block;
+  }
+
+  .navbar__menu.active {
+    display: flex;
+  }
+
+  .profile__career__item:nth-child(n) {
+    align-items: center;
+    text-align: center;
+    padding: calc(var(--size-base) * 4) calc(var(--size-base) * 2);
+  }
+
+  .skills__stack {
+    display: none;
+    height: 1300px;
+  }
+
+  .stack__desc {
+    display: none;
+  }
+
+  .skills__levels {
+    display: none;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
 }
