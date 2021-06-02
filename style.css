@@ -165,6 +165,12 @@ p {
 .section {
   padding: calc(var(--size-base) * 6.25);
   text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Home */
@@ -197,9 +203,13 @@ p {
 
 /* Profile */
 
+#profile {
+  /* text-align: center; */
+}
+
 .profile__career {
   background-color: var(--color-light-white);
-  border-radius: calc(var(--size-border-radius) * 2);
+  border-radius: calc(var(--size-base) * 2);
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
   padding: calc(var(--size-base) * 2);
