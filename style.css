@@ -278,9 +278,6 @@ p {
 /* Works */
 
 .works__categories {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
   margin: calc(var(--size-base) * 6);
 }
 
@@ -316,8 +313,6 @@ p {
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
-
-/* Works */
 
 .work__projects {
   display: flex;
