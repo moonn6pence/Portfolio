@@ -101,7 +101,7 @@ p {
   top: 0;
   width: 100%;
   z-index: 1;
-  transition: all var(--animation-duration) ease-in-out;
+  transition: all calc(var(--animation-duration) * 0.5) ease-in-out;
 }
 
 .navbar__logo {
@@ -144,6 +144,7 @@ p {
 
 #navbar.navbar--dark {
   background-color: var(--color-dark-skyblue);
+  box-shadow: 0 2px 20px var(--color-light-grey);
 }
 
 /* Common Section */

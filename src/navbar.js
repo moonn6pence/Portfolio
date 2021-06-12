@@ -21,24 +21,40 @@ export default class Navbar {
       const curTarget = event.target;
       const curNode = curTarget.nodeName;
       const curText = curTarget.textContent;
-      if (curTarget && curNode === "LI") {
+      if (curNode === "LI") {
         switch (curText) {
           case "Home":
-            this.sectionHome.scrollIntoView({ block: "start" });
+            this.sectionHome.scrollIntoView({
+              block: "start",
+              behavior: "smooth",
+            });
             break;
           case "Profile":
-            this.sectionProfile.scrollIntoView({ block: "center" });
+            this.sectionProfile.scrollIntoView({
+              block: "center",
+              behavior: "smooth",
+            });
             break;
           case "Skills":
-            this.sectionSkills.scrollIntoView({ block: "center" });
+            this.sectionSkills.scrollIntoView({
+              block: "center",
+              behavior: "smooth",
+            });
             break;
           case "Works":
-            this.sectionWorks.scrollIntoView({ block: "center" });
+            this.sectionWorks.scrollIntoView({
+              block: "center",
+              behavior: "smooth",
+            });
             break;
           case "Contact":
-            this.sectionContact.scrollIntoView({ block: "end" });
+            this.sectionContact.scrollIntoView({
+              block: "end",
+              behavior: "smooth",
+            });
             break;
         }
+        this.setMenuItemClick(curTarget);
       }
     });
   }
@@ -49,5 +65,14 @@ export default class Navbar {
     } else {
       this.navbar.classList.remove("navbar--dark");
     }
+  };
+
+  setMenuItemClick = (target) => {
+    target.parentNode.childNodes.forEach((arg) => {
+      if (arg.nodeName === "LI" && arg.matches(".active")) {
+        arg.classList.remove("active");
+      }
+    });
+    target.classList.add("active");
   };
 }
