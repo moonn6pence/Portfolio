@@ -1,6 +1,5 @@
-const toggleBtn = document.querySelector(".navbar__toggleBtn");
-const menu = document.querySelector(".navbar__menu");
+import Navbar from "./navbar.js";
+import Works from "./works.js";
 
-toggleBtn.addEventListener("click", () => {
-  menu.classList.toggle("active");
-});
+const navbar = new Navbar();
+const works = new Works();
