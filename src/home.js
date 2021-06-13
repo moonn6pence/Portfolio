@@ -10,9 +10,6 @@ export default class Home {
       this.sectionContact.scrollIntoView({ behavior: "smooth", block: "end" });
     });
     document.addEventListener("scroll", () => {
-      console.log(window.scrollY);
-      // console.log(this.homeHeight);
-      console.log(window.scrollY / this.homeHeight);
       if (window.scrollY > 300 && window.scrollY < 715) {
         this.homeTitle.style.opacity = `${
           (this.homeHeight - window.scrollY) / this.homeHeight
