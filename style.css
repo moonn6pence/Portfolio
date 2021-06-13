@@ -423,6 +423,19 @@ p {
   font-size: var(--font-small);
 }
 
+/* Arrow Button */
+.arrowBtn {
+  position: fixed;
+  right: calc(var(--size-base) * 6);
+  bottom: calc(var(--size-base) * 6);
+  font-size: var(--font-medium);
+  background-color: var(--color-dark-skyblue);
+  border-radius: 50%;
+  width: calc(var(--size-base) * 6);
+  height: calc(var(--size-base) * 6);
+  color: var(--color-white);
+}
+
 /* Media query */
 
 @media screen and (max-width: 768px) {

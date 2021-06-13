@@ -12,13 +12,11 @@ export default class Home {
     document.addEventListener("scroll", () => {
       if (window.scrollY > 300 && window.scrollY < 715) {
         this.homeTitle.style.opacity = `${
-          (this.homeHeight - window.scrollY) / this.homeHeight
+          1 - window.scrollY / this.homeHeight
         }`;
-        this.homeDesc.style.opacity = `${
-          (this.homeHeight - window.scrollY) / this.homeHeight
-        }`;
+        this.homeDesc.style.opacity = `${1 - window.scrollY / this.homeHeight}`;
         this.contactMeBtn.style.opacity = `${
-          (this.homeHeight - window.scrollY) / this.homeHeight
+          1 - window.scrollY / this.homeHeight
         }`;
       } else {
         this.homeTitle.style.opacity = "1";
