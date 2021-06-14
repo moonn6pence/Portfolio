@@ -22,6 +22,7 @@ export default class Navbar {
       const curNode = curTarget.nodeName;
       const curText = curTarget.textContent;
       if (curNode === "LI") {
+        this.menu.classList.remove("active");
         switch (curText) {
           case "Home":
             this.sectionHome.scrollIntoView({

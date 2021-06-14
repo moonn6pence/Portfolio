@@ -14,6 +14,7 @@
   --color-olive: #808000;
   --color-skyblue: #65cef8;
   --color-dark-skyblue: #4accf2;
+  --color-orange: #ff7f00;
 
   /* Font size */
   --font-large: 3rem;
@@ -382,7 +383,7 @@ p {
 }
 
 .project__title {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__title:after {
