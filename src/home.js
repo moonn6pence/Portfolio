@@ -24,5 +24,22 @@ export default class Home {
         this.contactMeBtn.style.opacity = "1";
       }
     });
+    const arrowBtn = document.querySelector(".arrowBtn");
+
+    document.addEventListener("scroll", () => {
+      if (window.scrollY > this.homeHeight / 2) {
+        arrowBtn.style.visibility = "visible";
+      } else {
+        arrowBtn.style.visibility = "hidden";
+      }
+    });
+
+    arrowBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
   }
 }
