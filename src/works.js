@@ -9,6 +9,13 @@ export default class Works {
       if (filter == null) {
         return;
       }
+
+      const selected = document.querySelector(".category__btn.selected");
+      selected.classList.remove("selected");
+      const target =
+        e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+      target.classList.add("selected");
+
       this.projectContainer.classList.add("anime-out");
       setTimeout(() => {
         this.projects.forEach((project) => {

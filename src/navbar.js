@@ -54,7 +54,6 @@ export default class Navbar {
             });
             break;
         }
-        this.setMenuItemClick(curTarget);
       }
     });
   }
@@ -65,14 +64,5 @@ export default class Navbar {
     } else {
       this.navbar.classList.remove("navbar--dark");
     }
-  };
-
-  setMenuItemClick = (target) => {
-    target.parentNode.childNodes.forEach((arg) => {
-      if (arg.nodeName === "LI" && arg.matches(".active")) {
-        arg.classList.remove("active");
-      }
-    });
-    target.classList.add("active");
   };
 }
