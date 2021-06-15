@@ -7,7 +7,7 @@ export default class Home {
     this.contactMeBtn = document.querySelector(".home__contact");
     this.sectionContact = document.querySelector("#contact");
     this.contactMeBtn.addEventListener("click", () => {
-      this.sectionContact.scrollIntoView({ behavior: "smooth", block: "end" });
+      this.callback("#contact");
     });
     document.addEventListener("scroll", () => {
       if (window.scrollY > 300 && window.scrollY < 715) {
@@ -33,13 +33,12 @@ export default class Home {
         arrowBtn.style.visibility = "hidden";
       }
     });
-
     arrowBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+      this.callback("#home");
     });
+  }
+
+  setScrollListener(callback) {
+    this.callback = callback;
   }
 }
